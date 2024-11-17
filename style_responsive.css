@@ -11,7 +11,7 @@ html, body{
 }
  .inpremiere {
     
-    background-image: url('images/background.png');
+    /* background-image: url('images/background.png'); */
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -202,6 +202,9 @@ main{
     margin: auto;
     padding: 20px;
     z-index: 51;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(images/background.png);
     
 }
 header{
