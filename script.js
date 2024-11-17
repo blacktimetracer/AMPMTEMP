@@ -56,11 +56,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             setTimeout(function(){
                 loader.style.animation ="fade-out 1s ease";
-            }, 1000);
+            }, 0001);
 
             setTimeout(function(){
                 loader.style.display = "none";
-            }, 1800);
+            }, 0001);
         });
 
 
@@ -85,3 +85,19 @@ window.addEventListener('mousemove', (event) => {
         floatingImage.style.top = `${event.clientY}px`; // Update vertical position
     }
 });
+
+document.addEventListener('scroll', () => {
+  const scrollPosition = window.scrollY; // Get the vertical scroll position
+  const background = document.querySelector('.background'); // Select the background element
+  background.style.backgroundPositionY = `${scrollPosition * -0.5}px`; // Move the background at 30% speed
+});
+
+if (window.innerWidth > 768) {
+  document.addEventListener('scroll', () => {
+      const scrollPosition = window.scrollY;
+      background.style.backgroundPositionY = `${scrollPosition * -0.6}px`;
+  });
+}
+
+
+

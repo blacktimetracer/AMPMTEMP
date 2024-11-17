@@ -200,12 +200,21 @@ main{
     /* background-color: #000; */
     width: min(1400px, 100vw);
     margin: auto;
-    padding: 20px;
     z-index: 51;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-image: url(images/background.png);
     
+}
+.background {
+    position: fixed; /* Fix the background relative to the viewport */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    background-image: url('images/background.png'); /* Replace with your image path */
+    background-size: cover; /* Ensure the image covers the screen */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent repeating */
+    z-index: -1; /* Keep it behind other content */
+}
 }
 header{
     display: flex;
@@ -691,7 +700,8 @@ footer .content{
 }
 #floating-image {
     position: fixed; /* Ensures the image is fixed relative to the viewport */
-    left: 50%; /* Center horizontally by default */
+    left: 50%;
+    width: 100vw; /* Center horizontally by default */
     transform: translateX(-50%);
     z-index: 1; /* Ensure it's above other elements */
     pointer-events: none; /* Prevent interaction with the image */
