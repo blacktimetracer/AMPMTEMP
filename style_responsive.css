@@ -11,7 +11,9 @@ html, body{
 }
  .inpremiere {
     
-    background-image: url('images/background.png'); 
+    background-image: url('images/background.png');
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 /* .smooth-scroll-wrapper{
     position: static;
@@ -88,7 +90,7 @@ html, body{
   } 
 
 body{
-    background-color: #000;
+    background-color: #1f1f1f;
     margin: 0;
     font-size: 14px;
     color: #FFF;
@@ -374,6 +376,7 @@ footer .content{
     width: min(1400px, 100vw);
     margin: auto;
     padding: 100px 20px;
+    z-index: 501;
 }
 .grid-5{
     --row: 5;
@@ -451,6 +454,7 @@ footer .content{
 }
 
 .autoRotate{
+    margin-top: -100px;
     animation: autoRotateAnimation;
     animation-timeline: view();
 }
