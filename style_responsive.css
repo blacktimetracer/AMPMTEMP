@@ -12,11 +12,11 @@ body {
     margin: 0;
     font-size: 14px;
     color: #FFF;
-    font-family: "Libre Baskerville", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 * {
-    padding: 0;
+    padding: 2px;
     margin: 0;
     box-sizing: border-box;
     list-style: none;
@@ -27,6 +27,95 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
 }
+
+.about-us {
+
+    padding: 60px 20px;
+    margin-top: 200px;
+    /* background-color: #f5f5f5; */
+    text-align: center; /* Center align the title */
+}
+
+.about-us h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #FFF; /* Darker text for contrast */
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Spacing between elements */
+}
+
+.about-content p {
+    flex: 1; /* Paragraph takes equal space */
+    font-size: 1.2rem;
+    color: #FFF;
+    line-height: 1.8;
+    max-width: 600px; /* Limit paragraph width for readability */
+    text-align: left;
+}
+
+.about-gif-container {
+    flex: 1; /* GIF takes equal space */
+    max-width: 600px; /* Limit the GIF size */
+    border-radius: 20px; /* Rounded corners */
+    overflow: hidden; /* Ensures GIF doesn't overflow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.about-gif-container img {
+    width: 100%;
+    height: auto;
+    display: block; /* Removes bottom margin */
+    border-radius: 20px; /* Matches container's rounded corners */
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column; /* Stack paragraph and GIF vertically */
+        text-align: center; /* Center-align text */
+    }
+
+    .about-content p {
+        text-align: center; /* Center-align paragraph */
+    }
+
+    .about-gif-container {
+        max-width: 100%; /* Allow GIF to scale on smaller screens */
+    }
+}
+
+/* Our Vision Section Styling */
+.our-vision {
+    padding: 60px 20px;
+    /* background-color: #1f1f1f; */
+    text-align: center;
+    margin-bottom: -300px;
+}
+
+.our-vision h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #fff; /* Darker text for contrast */
+}
+
+.vision-content {
+    max-width: 800px;
+    margin: 0 auto; /* Center align */
+}
+
+.vision-content p {
+    font-size: 1.2rem;
+    color: #fff;
+    line-height: 1.8;
+    text-align: center;
+    margin: 0;
+}
+
 
 #floating-gallery-section {
     position: relative;
@@ -108,7 +197,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('images/contact-parallax.png');
+    /* background-image: url('images/contact-parallax.png'); */
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -131,6 +220,7 @@ body {
     max-width: 1200px;
     z-index: 1;
     color: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 h2 {
@@ -284,7 +374,92 @@ header img {
 
 }
 
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+    z-index: 51; /* Place it above the video */
+}
 
+/* .navbar {
+    position: absolute;
+    bottom: 0;
+    width: 110%;
+    z-index: 60;
+    left: -5%;
+    background-color: rgba(0, 0, 0, 0.8); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+} */
+
+.navbar {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 60;
+    left: 0%;
+    overflow: hidden;
+    /* transition: all 0.3s ease-in-out; */
+}
+
+.navbar.sticky {
+    position: fixed; /* Make it stick to the top */
+    top: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add a shadow */
+    padding: 10px 20px;
+    bottom: 93%; 
+    overflow: hidden;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center; /* Center the navigation links */
+    margin: 0;
+    padding: 10px 0;
+    list-style: none;
+    overflow: hidden;
+}
+
+.navbar ul li {
+    margin: 0 15px; /* Space between menu items */
+    overflow: hidden;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+    overflow: hidden;
+}
+
+.navbar ul li a:hover {
+    color: #8855ff;
+    overflow: hidden; /* Highlight color on hover */
+}
+
+/* Logo */
+.logo {
+    display: none; /* Hide by default */
+    margin-right: auto; /* Align logo to the left */
+    padding-left: 20px; /* Add spacing for logo */
+}
+
+/* .navbar.sticky .logo {
+    display: block;
+} */
+
+.logo img {
+    height: 40px; /* Adjust logo size */
+    transition: height 0.3s ease; /* Smooth size adjustment */
+}
 .banner .image {
     width: 100%;
     height: 600px;
@@ -297,10 +472,10 @@ header img {
     position: absolute;
     /* width: 600px; */
     /* height: 600px; */
-    height: 110%;
-    left: 50%;
+    height: 50%;
+    left: 12%;
     transform: translateX(-50%);
-    bottom: 0%;
+    bottom: 83%;
 }
 
 .banner .image video {
@@ -398,8 +573,9 @@ header img {
 }
 
 footer {
+    
     border-top: 1px solid #2E373A55;
-    min-height: 100vh;
+    min-height: 3vh;
 }
 
 footer .content {
@@ -538,6 +714,7 @@ footer .content {
 .autoBLur {
     animation: autoBLurAnimation linear both;
     animation-timeline: view();
+
 }
 
 @keyframes autoBLurAnimation {
@@ -676,7 +853,7 @@ footer .content {
 
 .video-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 20px;
 }
 
@@ -779,6 +956,7 @@ footer .content {
 /*###############################/*###############################/*###############################/*###############################/*###############################/*###############################*/
 
 .pricing-container {
+    margin: 50px;
     display: flex;
     justify-content: center;
     gap: 24px;
@@ -904,3 +1082,4 @@ footer .content {
 .lets-talk {
     font-size: 36px;
 }
+

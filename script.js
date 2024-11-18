@@ -99,5 +99,32 @@ if (window.innerWidth > 768) {
   });
 }
 
+let lastScrollY = 0; // Track the last scroll position
+
+window.addEventListener('scroll', () => {
+    const navbar = document.getElementById('navbar');
+    const bannerHeight = document.querySelector('.video-overlay').offsetHeight; // Height of the hero section
+    const scrollY = window.scrollY;
+
+    // Enter sticky mode if scrolled past the banner
+    if (scrollY >= bannerHeight) {
+        navbar.classList.add('sticky');
+        // navbar.style.position = 'fixed';
+        // navbar.style.top = '0';
+    } else {
+        // Return to original position at the bottom of the banner
+        navbar.classList.remove('sticky');
+        navbar.style.overflow= 'hidden';
+        // navbar.style.position = 'absolute';
+        // navbar.style.bottom = '0';
+    }
+
+    // Update last scroll position
+    lastScrollY = scrollY;
+});
+
+if (scrollY >= bannerHeight - 5) {
+  navbar.classList.add('sticky');
+}
 
 
