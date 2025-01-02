@@ -1,2 +1,0 @@
-<!--{@|json-pretty}-->
-<a href="{target}" {.section isActive}class="active"{.end}>{title}</a>
