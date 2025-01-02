@@ -3,10 +3,10 @@
 -----------------------------------------*/
 :root {
   --white-color:                  #ffffff;
-  --primary-color:                #1e1e1e;
-  --secondary-color:              #6707ee;
+  --primary-color:                #FFFFFF;
+  --secondary-color:              rgb(66, 157, 255);
   --section-bg-color:             #f0f8ff;
-  --custom-btn-bg-color:          #6707ee;
+  --custom-btn-bg-color:          rgb(57, 132, 213);
   --custom-btn-bg-hover-color:    #4b0da1;
   --dark-color:                   #000000;
   --p-color:                      #717275;
@@ -507,7 +507,7 @@ strong {
 
 .about-section.img2 {
   /* background-image: url('../images/particles.jpg'); */
-  background-color: #FFFFFF;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 
@@ -587,7 +587,7 @@ strong {
   GALLERY              
 -----------------------------------------*/
 .gallery-section {
-  background-image: url('../images/particles.jpg');
+  background-image: url('../images/artboard_3.png');
   background-color: #242424;
   background-repeat: no-repeat;
   background-position: center;
@@ -650,7 +650,7 @@ strong {
   position: absolute;
   top: -12px;
   right: 24px;
-  background: #8855FF;
+  background: rgb(66, 157, 255);
   color: white;
   padding: 4px 12px;
   border-radius: 20px;
@@ -696,7 +696,7 @@ strong {
   padding: 12px;
   border: none;
   border-radius: 6px;
-  background: #8855FF;
+  background: rgb(66, 157, 255);
   color: white;
   font-weight: bold;
   cursor: pointer;
@@ -723,12 +723,12 @@ strong {
   content: "✓";
   position: absolute;
   left: 0;
-  color: #8855FF;
+  color: rgb(66, 157, 255);
 }
 
 .more-features {
   display: block;
-  color: #8855FF;
+  color: rgb(66, 157, 255);
   text-decoration: none;
   margin-top: 24px;
 }
@@ -981,8 +981,9 @@ strong {
 }
 
 .belt img {
-  max-height: 80px;
-  margin: 0 150px;
+  /* max-height: 80px; */
+  height: 40px;
+  margin: 0 10%;
   transition: transform 0.2s ease-in-out;
 }
 

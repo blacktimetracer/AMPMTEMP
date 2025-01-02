@@ -279,7 +279,7 @@ button {
 	--bright-orange: #ff9634;
 	--dark-gold: #e0a233;
 	--light-dimmed-text: #878aa5;
-	--gold: #ffcd73;
+	--gold: #6707ee;
 	--blacker-sand: #0c0a09;
 	--rgba-255-255-255-0-85: transparent
 }
@@ -349,7 +349,7 @@ h6 {
 	color: var(--faint-blue);
 	margin-top: 0;
 	margin-bottom: 0;
-	font-family: Poppins, sans-serif;
+	/* font-family: Poppins, sans-serif; */
 	font-size: 17px;
 	font-weight: 400;
 	line-height: 1.65em
@@ -390,8 +390,8 @@ img {
 }
 
 .container.medium-top.small-bottom {
-	padding-top: 175px;
-	padding-bottom: 100px;
+	padding-top: 10%;
+	/* padding-bottom: 100px; */
 }
 
 .container.medium-top.hero {
@@ -870,7 +870,7 @@ img {
 
 .team-lockup-container {
 	/* box-shadow: inset 0 0 0 2px var(--teal); */
-	background-color: #101010;
+	background-color: rgba(0,0,0,0.8);
 	border-radius: 10px;
 	margin-bottom: 2.5em;
 	padding: 20px;
