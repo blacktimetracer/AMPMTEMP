@@ -975,15 +975,16 @@ strong {
 
 .belt {
   display: flex;
-  animation: scroll-belt 20s linear infinite;
+  animation: scroll-belt 100s linear infinite;
   width: max-content;
   margin: 50px;
 }
 
 .belt img {
   /* max-height: 80px; */
-  height: 40px;
-  margin: 0 10%;
+  height: 60px;
+  max-width: 200px;
+  margin: 0 5%;
   transition: transform 0.2s ease-in-out;
 }
 
@@ -1003,7 +1004,7 @@ strong {
   }
 
   to {
-      transform: translateX(-20%);
+      transform: translateX(-200%);
   }
 }
 
