@@ -27,7 +27,7 @@
 
     <link rel="icon" href="images/LOGO.png" >
 
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script type="text/javascript">
         (function() {
             // https://dashboard.emailjs.com/admin/account
@@ -35,6 +35,29 @@
               publicKey: "whesdqMoy2DGrcP8k",
             });
         })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // these IDs from the previous steps
+                emailjs.send("service_iod5mze","template_3fsx164",{
+                    from_name: document.getElementById("name").value,
+                    user_email: document.getElementById("email").value,
+                    message: document.getElementById("message").value,
+                    user_company: document.getElementById("company").value,
+                    reply_to: document.getElementById("email").value
+                })
+                    .then(() => {
+                        alert("Message sent successfully!");
+                                            })
+                                            .catch((error) => {
+                                                console.error("Error sending email:", error);
+                                                alert("Failed to send message. Please try again later.");
+                                            });
+                    
+            });
+        }
     </script>
 
 </head>
@@ -443,7 +466,7 @@
                             <div class="tab-pane fade show active" id="nav-ContactForm" role="tabpanel"
                                 aria-labelledby="nav-ContactForm-tab">
 
-                                <form id="contact-form" class="custom-form contact-form mb-5 mb-lg-0"
+                                <form id="contact-form" action="#"class="custom-form contact-form mb-5 mb-lg-0"
                                     role="form">
                                     <div class="contact-form-body">
                                         <div class="row">
@@ -460,7 +483,7 @@
                                         </div>
 
                                         <input type="text" name="company" id="company"
-                                            class="form-control" placeholder="Company" required>
+                                            class="form-control" placeholder="Company">
 
                                         <textarea name="message" rows="3" class="form-control"
                                             id="message" placeholder="Message"></textarea>
@@ -470,7 +493,7 @@
                                         </div>
                                     </div>
                                 </form>
-                                <script>
+                                <!-- <script>
                                     document.getElementById("contact-form").addEventListener("submit", function (event) {
                                         event.preventDefault();
                             
@@ -478,12 +501,12 @@
                                         const templateID = "template_3fsx164"; // Replace with your EmailJS template ID
                             
                                         const templateParams = {
-                                            name: document.getElementById("name").value,
-                                            email: document.getElementById("email").value,
+                                            from_name: document.getElementById("name").value,
+                                            user_email: document.getElementById("email").value,
                                             message: document.getElementById("message").value,
                                         };
                             
-                                        emailjs.send(serviceID, templateID, templateParams)
+                                        emailjs.send("service_iod5mze", "template_3fsx164", templateParams)
                                             .then(() => {
                                                 alert("Message sent successfully!");
                                             })
@@ -492,7 +515,7 @@
                                                 alert("Failed to send message. Please try again later.");
                                             });
                                     });
-                                </script>
+                                </script> -->
                             </div>
 
                             <!-- <div class="tab-pane fade" id="nav-ContactMap" role="tabpanel"
