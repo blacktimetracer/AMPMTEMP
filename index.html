@@ -4,7 +4,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -27,6 +26,16 @@
     <link href="css/main.css" rel="stylesheet">
 
     <link rel="icon" href="images/LOGO.png" >
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init({
+              publicKey: "whesdqMoy2DGrcP8k",
+            });
+        })();
+    </script>
 
 </head>
 
@@ -381,7 +390,7 @@
                         <li>Dedicated Video Editor</li>
                         <li>Unlimited brand accounts</li>
                         <li>Unlimited users</li>
-                        <li>Chat with editor on Discord/Basecamp</li>
+                        <li>Chat with editor on Discord/Google Meet</li>
                     </ul>
                     <a href="#" class="more-features">More features →</a>
                 </div>
@@ -433,33 +442,57 @@
                         <div class="tab-content shadow-lg mt-5" id="nav-tabContent">
                             <div class="tab-pane fade show active" id="nav-ContactForm" role="tabpanel"
                                 aria-labelledby="nav-ContactForm-tab">
-                                <form class="custom-form contact-form mb-5 mb-lg-0" action="#" method="post"
+
+                                <form id="contact-form" class="custom-form contact-form mb-5 mb-lg-0"
                                     role="form">
                                     <div class="contact-form-body">
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6 col-12">
-                                                <input type="text" name="contact-name" id="contact-name"
+                                                <input type="text" name="name" id="name"
                                                     class="form-control" placeholder="Full name" required>
                                             </div>
 
                                             <div class="col-lg-6 col-md-6 col-12">
-                                                <input type="email" name="contact-email" id="contact-email"
+                                                <input type="email" name="email" id="email"
                                                     pattern="[^ @]*@[^ @]*" class="form-control"
                                                     placeholder="Email address" required>
                                             </div>
                                         </div>
 
-                                        <input type="text" name="contact-company" id="contact-company"
+                                        <input type="text" name="company" id="company"
                                             class="form-control" placeholder="Company" required>
 
-                                        <textarea name="contact-message" rows="3" class="form-control"
-                                            id="contact-message" placeholder="Message"></textarea>
+                                        <textarea name="message" rows="3" class="form-control"
+                                            id="message" placeholder="Message"></textarea>
 
                                         <div class="col-lg-4 col-md-10 col-8 mx-auto">
                                             <button type="submit" class="form-control">Send message</button>
                                         </div>
                                     </div>
                                 </form>
+                                <script>
+                                    document.getElementById("contact-form").addEventListener("submit", function (event) {
+                                        event.preventDefault();
+                            
+                                        const serviceID = "service_iod5mze"; // Replace with your EmailJS service ID
+                                        const templateID = "template_3fsx164"; // Replace with your EmailJS template ID
+                            
+                                        const templateParams = {
+                                            name: document.getElementById("name").value,
+                                            email: document.getElementById("email").value,
+                                            message: document.getElementById("message").value,
+                                        };
+                            
+                                        emailjs.send(serviceID, templateID, templateParams)
+                                            .then(() => {
+                                                alert("Message sent successfully!");
+                                            })
+                                            .catch((error) => {
+                                                console.error("Error sending email:", error);
+                                                alert("Failed to send message. Please try again later.");
+                                            });
+                                    });
+                                </script>
                             </div>
 
                             <!-- <div class="tab-pane fade" id="nav-ContactMap" role="tabpanel"
@@ -554,13 +587,13 @@
                     </p>
 
                     <p class="text-white d-flex">
-                        <a href="mailto:medo.blackbusiness@gmail.com" class="site-footer-link">
+                        <a href="mailto:info@ampm.productions" class="site-footer-link">
                             info@ampm.productions
                         </a>
                     </p>
                 </div>
 
-                <!-- <div class="col-lg-3 col-md-6 col-11 mb-4 mb-lg-0 mb-md-0">
+                <div class="col-lg-3 col-md-6 col-11 mb-4 mb-lg-0 mb-md-0">
                     <h5 class="site-footer-title mb-3" style="color: #FFF;" >Location</h5>
 
                     <p class="text-white d-flex mt-3 mb-2">
@@ -576,7 +609,7 @@
                             </g>
                         </svg>
                     </a>
-                </div> -->
+                </div>
             </div>
         </div>
 
