@@ -1,8 +1,7 @@
 -----------------------
 # README
 -----------------------
-Browny is a one page bootstrap 3 based resume/portfolio template.
-
+AMPM Website Design and Development by Arukami for Media Production Agencies.
 
 Template Info:
 -----------------------
