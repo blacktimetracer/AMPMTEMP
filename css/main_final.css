@@ -34,10 +34,9 @@
   --font-weight-bold:             700;
 }
 
-html, body {
+body {
   background-color: var(--white-color);
-  font-family: var(--body-font-family);
-  overflow-x: hidden; 
+  font-family: var(--body-font-family); 
 }
 
 
@@ -926,7 +925,6 @@ strong {
   .ticket-form {
     padding: 30px;
   }
-  
 }
 
 @media screen and (max-width: 767px) {
@@ -955,23 +953,6 @@ strong {
 
   h5 {
     font-size: 20px;
-  }
-}
-
-@media (max-width: 375px) {
-  .video-item {
-    width: 335px; /* Fixed width for iPhone SE */
-  }
-}
-
-@media (max-width: 414px) {
-  .video-item {
-    width: 375px; /* Fixed width for iPhone SE */
-  }
-}
-@media (max-width: 390px) {
-  .video-item {
-    width: 350px; /* Fixed width for iPhone SE */
   }
 }
 
@@ -1029,3 +1010,90 @@ strong {
 
 
 
+
+/* Responsive Design Rules */
+@media (max-width: 768px) {
+  body {
+    font-size: 1rem;
+  }
+  .container {
+    padding: 0 1rem;
+  }
+  header, footer {
+    padding: 1rem;
+    text-align: center;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  .responsive-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 0.875rem;
+  }
+  .container {
+    padding: 0 0.5rem;
+  }
+}
+
+/* Ensure no elements exceed screen width */
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Responsive Design Rules */
+@media (max-width: 768px) {
+  body {
+    font-size: 1rem;
+  }
+  .container {
+    padding: 0 1rem;
+  }
+  header, footer {
+    padding: 1rem;
+    text-align: center;
+  }
+  .responsive-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 0.875rem;
+  }
+  .container {
+    padding: 0 0.5rem;
+  }
+}
