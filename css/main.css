@@ -928,6 +928,57 @@ strong {
   }
   
 }
+.client-belt {
+  /* background-color: #f9f9f9; */
+  padding: 20px 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.belt-wrapper {
+  display: flex;
+  overflow: hidden;
+  cursor: grab;
+}
+
+.belt-wrapper:active {
+  cursor: grabbing;
+}
+
+.belt {
+  display: flex;
+  animation: scroll-belt 80s linear infinite;
+  width: max-content;
+  margin: 50px;
+}
+
+.belt img {
+  /* max-height: 80px; */
+  height: 60px;
+  /* max-width: 200px; */
+  margin: 0 5%;
+  transition: transform 0.2s ease-in-out;
+}
+
+.belt img:hover {
+  transform: scale(1.1);
+}
+
+/* Disable animation temporarily when interacting */
+.belt.no-animation {
+  animation: none;
+}
+
+/* Keyframes for scrolling animation */
+@keyframes scroll-belt {
+  from {
+      transform: translateX(0);
+  }
+
+  to {
+      transform: translateX(-170%);
+  }
+}
 
 @media screen and (max-width: 767px) {
   .custom-btn {
@@ -962,11 +1013,35 @@ strong {
   .video-item {
     width: 335px; /* Fixed width for iPhone SE */
   }
+  .belt {
+    animation: scroll-belt 40s linear infinite;
+  }
+  @keyframes scroll-belt {
+    from {
+        transform: translateX(0);
+    }
+  
+    to {
+        transform: translateX(-900%);
+    }
+  }
 }
 
 @media (max-width: 414px) {
   .video-item {
     width: 375px; /* Fixed width for iPhone SE */
+  }
+  .belt {
+    animation: scroll-belt 40s linear infinite;
+  }
+  @keyframes scroll-belt {
+    from {
+        transform: translateX(0);
+    }
+  
+    to {
+        transform: translateX(-900%);
+    }
   }
 }
 @media (max-width: 390px) {
@@ -975,57 +1050,23 @@ strong {
   }
 }
 
-.client-belt {
-  /* background-color: #f9f9f9; */
-  padding: 20px 0;
-  overflow: hidden;
-  position: relative;
-}
-
-.belt-wrapper {
-  display: flex;
-  overflow: hidden;
-  cursor: grab;
-}
-
-.belt-wrapper:active {
-  cursor: grabbing;
-}
-
-.belt {
-  display: flex;
-  animation: scroll-belt 100s linear infinite;
-  width: max-content;
-  margin: 50px;
-}
-
-.belt img {
-  /* max-height: 80px; */
-  height: 60px;
-  /* max-width: 200px; */
-  margin: 0 5%;
-  transition: transform 0.2s ease-in-out;
-}
-
-.belt img:hover {
-  transform: scale(1.1);
-}
-
-/* Disable animation temporarily when interacting */
-.belt.no-animation {
-  animation: none;
-}
-
-/* Keyframes for scrolling animation */
-@keyframes scroll-belt {
-  from {
-      transform: translateX(0);
+@media (max-width: 768px) {
+  .belt {
+    animation: scroll-belt 40s linear infinite;
+  }
+  @keyframes scroll-belt {
+    from {
+        transform: translateX(0);
+    }
+  
+    to {
+        transform: translateX(-900%);
+    }
   }
 
-  to {
-      transform: translateX(-200%);
-  }
 }
+
+
 
 
 
